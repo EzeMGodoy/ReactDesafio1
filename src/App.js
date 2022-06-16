@@ -1,24 +1,17 @@
-import logo from './favicon.webp';
-import './App.css';
+import logo from "./assets/favicon.webp";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+      <Navbar />
+      <div className="container">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Tienda Ser Impersonal
-        </p>
-        <a
-          className="App-link"
-          href="https://www.instagram.com/ser.impersonal/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visita nuestro Instagram
-        </a>
-      </header>
-    </div>
+      </div>
+      <Body />
+    </>
   );
 }
 
