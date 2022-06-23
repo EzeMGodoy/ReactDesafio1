@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <Welcome greeting="Profe" />
       <ItemListContainer title='Capacitaciones Ser Impersonal'/>
-      <ItemCount/>
+      <ItemCount stock={5}/>
       <Body/>
     </>
   );
