@@ -69,9 +69,7 @@ export const NavPage = styled.nav`
       }
       display: block;
     }
-    .cartWidget {
-      font-size: 1.5rem;
-    }
+    
   }
 
   .menu.active {

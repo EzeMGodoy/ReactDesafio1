@@ -5,17 +5,16 @@ import "./ItemCount.css";
 function Contador({ stock }) {
   const [num, setNum] = useState(0);
 
-
-  // useEffect(()=>{
-  //   if (num === stock - 2) {
-  //     Swal.fire({
-  //       title: "Atención",
-  //       text: `Quedan pocas unidades`,
-  //       icon: "warning",
-  //       confirmButtonText: "Aceptar",
-  //     });
-  //   }
-  // }, [num])
+  useEffect(()=>{
+    if (num === stock - 2) {
+      Swal.fire({
+        title: "Atención",
+        text: `Quedan pocas unidades`,
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      });
+    }
+  }, [num])
 
   const sumar = () => {
     if (num < stock) {

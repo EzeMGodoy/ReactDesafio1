@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavPage } from "./NavBarStyle";
 import { BgDiv } from "./NavBarStyle";
 import BurguerMenu from "./BurguerMenu";
-import { FaShoppingCart } from "react-icons/fa";
+import CartWidget from "./CartWidget";
 
 
 function Navbar() {
@@ -32,9 +32,7 @@ function Navbar() {
           <a onClick={handleClick} href="#h">
             Contacto
           </a>
-          <a href="/">
-          <FaShoppingCart className="cartWidget" />
-          </a>
+        <CartWidget/>
           
         </div>
         <div className="burguer">
