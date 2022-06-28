@@ -14,7 +14,7 @@ function Contador({ stock }) {
         confirmButtonText: "Aceptar",
       });
     }
-  }, [num])
+  }, [num, stock])
 
   const sumar = () => {
     if (num < stock) {

@@ -1,7 +1,4 @@
 .itemListContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #e6e7d9;
 }
 
@@ -9,4 +6,5 @@
     color: #696C5B;
     font-size: 2rem;
     font-weight: 700;
+    text-align: center;
 }

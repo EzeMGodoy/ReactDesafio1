@@ -2,21 +2,22 @@ import styled from "styled-components";
 
 export const NavPage = styled.nav`
   padding: 1rem;
-  background-color: #333;
+  background-color: #B7C3AD;
   display: flex;
   align-items: center;
   justify-content: space-between;
   a {
-    color: white;
+    color: #243A24;
     text-decoration: none;
     margin-right: 1rem;
   }
   .logo {
     font-weight: 400;
-    color: green;
+    color: #243A24;
     font-size: 1.5rem;
     span {
       font-weight: bold;
+      color: #243A24;
     }
   }
 
@@ -32,7 +33,7 @@ export const NavPage = styled.nav`
     transition: all 0.5s ease;
 
     a {
-      color: white;
+      color: #243A24;
       font-size: 2rem;
       display: block;
       position: relative;
@@ -64,8 +65,9 @@ export const NavPage = styled.nav`
 
       a {
         font-size: 1rem;
-        color: white;
+        color: #243A24;
         display: inline;
+        font-weight: 500;
       }
       display: block;
     }

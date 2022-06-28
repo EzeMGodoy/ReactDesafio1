@@ -1,0 +1,44 @@
+[
+  {
+    "title": "EFT",
+    "price": 2000,
+    "id": 1,
+    "description": "La técnica de Liberación Emocional o EFT, conocida como TAPPING es una herramienta revolucionaria de sanación. La misma proporciona resultados en problemas de rendimiento, físicos y emocionales.",
+    "img": "capacitacion1.webp"
+  },
+  {
+    "title": "Tu eres la medicina",
+    "price": 2300,
+    "id": 2,
+    "description": "EL REAL POTENCIAL DE TODOS. Para percibir y sentir la realidad que nos rodea y nos integra, sin distorsionarla, se necesita de energía. Sin ella insensibilizamos los mensajes que nos envía nuestro cuerpo. Con la energía correcta podrás sanarte a ti mismo...",
+    "img": "capacitacion2.webp"
+  },
+  {
+    "title": "Emociones Transgeneracionales",
+    "price": 3100,
+    "id": 3,
+    "description": "LO QUE SE HEREDA NO SE ROBA. El mismo color de ojos de papá, la contextura física de mamá... Así como heredamos aspectos físicos, no sólo de nuestros padres, de igual manera se heredan las EMOCIONES de distintas ramas de nuestro árbol genealógico.",
+    "img": "capacitacion3.webp"
+  },
+  {
+    "title": "Emociones Atrapadas",
+    "price": 2550,
+    "id": 4,
+    "description": "Cuando NO somos conscientes de nuestras emociones, las mismas quedan atrapadas, almacenándose en nuestro inconsciente, generalmente debido a la falta de recursos para afrontar determinadas situaciones que hemos vivido de manera traumática...",
+    "img": "capacitacion4.webp"
+  },
+  {
+    "title": "Bloqueos Energéticos",
+    "price": 4100,
+    "id": 5,
+    "description": "Para poder liberar los bloqueos energéticos debemos cambiar nuestros pensamientos y convertirlos en más positivos y La energía debe fluir por nuestro cuerpo de manera equilibrada...",
+    "img": "capacitacion5.webp"
+  },
+  {
+    "title": "El perdón",
+    "price": 3150,
+    "id": 6,
+    "description": "Debemos comprender que nuestra identidad está marcada por nuestras actitudes y que muchas de ellas son automáticas, por más propias que las sintamos, la mayoría no lo son...",
+    "img": "capacitacion6.webp"
+  }
+]
