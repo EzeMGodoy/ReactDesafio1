@@ -10,7 +10,7 @@ function Item({ title, img, description, price }) {
           <h5 className="capacitacionesTitle">{title}</h5>
           <p>{description}</p>
           <p>${price}</p>
-          <button className="capacitacionesButton">Ver más</button>
+          <button className="capacitacionesButton" onClick={description}>Ver más</button>
         </div>
       </div>
     </div>
