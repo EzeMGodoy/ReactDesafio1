@@ -1,9 +1,13 @@
-.container{
-    margin:1rem auto;
-    width:90%;
-    max-width:40rem;
-    text-align:center;
-    background-color:white;
-    padding:2rem;
-    border-radius:12px;
+.itemDetailContainer {
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+    background-color: #B7C3AD;
+    padding: 40px;
 }
+
+.price {
+  font-weight: bold;
+}
+
+

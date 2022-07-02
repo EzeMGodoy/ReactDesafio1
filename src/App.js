@@ -1,9 +1,9 @@
 import "./App.css";
 import Navbar from "./components/NavBar";
-import Body from "./components/Body";
+// import Body from "./components/Body";
 import Welcome from "./components/Welcome";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemCount from "./components/ItemCount";
+// import ItemListContainer from "./components/ItemListContainer";
+// import ItemCount from "./components/ItemCount";
 import ItemDetailContainer from "./components/ItemilDetailContainer";
 
 
