@@ -5,7 +5,7 @@ function Item({ title, img, description, price }) {
   return (
     <div>
       <div className="capacitacionesCard">
-        <img src={require(`../components/img/${img}`)} alt={title} className="capacitacionesImg" />
+        <img src={require(`../assets/img/${img}`)} alt={title} className="capacitacionesImg" />
         <div className="capacitacionesBody">
           <h5 className="capacitacionesTitle">{title}</h5>
           <p>{description}</p>

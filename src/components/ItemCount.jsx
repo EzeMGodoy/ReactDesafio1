@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import "./ItemCount.css";
 
-function Contador({ stock }) {
-  const [num, setNum] = useState(0);
+function Contador({ stock, initial, onAdd }) {
+  const [num, setNum] = useState(initial);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (num === stock - 2) {
       Swal.fire({
         title: "Atención",
@@ -14,7 +14,7 @@ function Contador({ stock }) {
         confirmButtonText: "Aceptar",
       });
     }
-  }, [num, stock])
+  }, [num, stock]);
 
   const sumar = () => {
     if (num < stock) {
@@ -43,23 +43,12 @@ function Contador({ stock }) {
   const reiniciar = () => {
     setNum(0);
   };
-  const onAdd = () => {
-    if (num === 1) {
-      Swal.fire({
-        title: "Genial",
-        text: `Agregaste al carrito ${num} producto.`,
-        icon: "success",
-        confirmButtonText: "Cool",
-      });
-    } else {
-      Swal.fire({
-        title: "Genial",
-        text: `Agregaste al carrito ${num} productos.`,
-        icon: "success",
-        confirmButtonText: "Cool",
-      });
-    }
-  };
+
+  const addToCart = () => {
+    onAdd(num)
+
+  }
+ 
   return (
     <>
       <div className="contadorContainer">
@@ -73,7 +62,7 @@ function Contador({ stock }) {
           </button>
 
           <button onClick={reiniciar}>Reiniciar!</button>
-          <button onClick={onAdd}>Agregar al Carrito</button>
+          <button onClick={addToCart}>Agregar al Carrito</button>
         </div>
       </div>
     </>
