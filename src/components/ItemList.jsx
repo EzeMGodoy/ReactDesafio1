@@ -14,3 +14,5 @@ function ItemList({listadoProductos}) {
 }
 
 export default ItemList
+
+// recive listadoProductos de ItemListContainer linea 24 y aca lo mapea
