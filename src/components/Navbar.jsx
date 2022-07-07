@@ -1,48 +1,29 @@
-import React, { useState } from "react";
-import { NavPage } from "./NavBarStyle";
-import { BgDiv } from "./NavBarStyle";
-import BurguerMenu from "./BurguerMenu";
-import CartWidget from "./CartWidget";
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 function Navbar() {
-  const [clicked, setClicked] = useState(false);
-  const handleClick = () => {
-    setClicked(!clicked);
-  };
+  const categories = [
+    { id: "todos", address: "/", text: "TODOS LOS PRODUCTOS" },
+    {
+      id: "capacitaciones",
+      address: "/category/capacitaciones",
+      text: "Categoria CAPACITACIONES",
+    },
+    { id: "cursos", address: "/category/cursos", text: "Categoria CURSOS" },
+    { id: "online", address: "/category/online", text: "Categoria ONLINE" },
+  ];
   return (
-    <>
-      <NavPage>
-        <a href="/" className="logo">
-          Ser <span>Impersonal</span>
-        </a>
-        <div className={`menu ${clicked ? "active" : ""}`}>
-          <a onClick={handleClick} href="#h" className="selected">
-            Inicio
-          </a>
-          <a onClick={handleClick} href="#h">
-            Capacitaciones
-          </a>
-          <a onClick={handleClick} href="#h">
-            Blog
-          </a>
-          <a onClick={handleClick} href="#h">
-            Nosotros
-          </a>
-          <a onClick={handleClick} href="#h">
-            Contacto
-          </a>
-        <CartWidget/>
-          
-        </div>
-        <div className="burguer">
-          <BurguerMenu clicked={clicked} handleClick={handleClick} />
-        </div>
-        <BgDiv className={`initial ${clicked ? "active" : ""}`}></BgDiv>
-      </NavPage>
-    </>
+    <section className="NavBarCategories">
+      {categories.map((cat) => {
+        return (
+          <Link to={cat.address} className="Links" key={cat.id}>
+            {cat.text}
+          </Link>
+        );
+      })}
+    </section>
   );
 }
 
 export default Navbar;
-

@@ -7,7 +7,7 @@ function ItemList({listadoProductos}) {
   return (
     <div className='listaProductosContainer'>
         <div className='separadorCards'>
-            {listadoProductos.map((unProducto)=> <Item key={unProducto.id} title={unProducto.title} img={unProducto.img} price={unProducto.price}/> )}
+            {listadoProductos.map((unProducto)=> <Item key={unProducto.id} id={unProducto.id} title={unProducto.title} img={unProducto.img} price={unProducto.price} category={unProducto.category} description={unProducto.description} /> )}
         </div>
     </div>
   )

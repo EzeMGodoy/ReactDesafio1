@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import "./ItemDetailContainer.css";
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
   const [descriptionFetch, setdescriptionFetch] = useState([]);
+  const {iditem} = useParams();
 
   const [buttonClicked, setButtonClicked] = useState(false);
   const handleButtonClick = () => {
@@ -12,11 +14,11 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("./api.json")
+      fetch("../api.json")
         .then((res) => res.json())
-        .then((data) => setdescriptionFetch(data.filter((i) => i.id === 1)));
-    }, 2000);
-  }, []);
+        .then((data) => setdescriptionFetch(data.filter((i) => i.id === iditem)));
+    }, 1000);
+  }, [iditem]);
 
   return (
     <div className="itemDetailContainer">
@@ -30,6 +32,13 @@ function ItemDetailContainer() {
         )}
       </div>
     </div>
+
+      // <div className="itemDetailContainer">
+      //   <ItemDetail detail={descriptionFetch[0]}/>
+      // </div>
+    
+
+    // <ItemDetail {...descriptionFetch}/>
   );
 }
 

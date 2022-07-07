@@ -1,0 +1,7 @@
+.NavBarCategories{
+    background-color: lightblue;
+    display: grid;
+    flex-direction: column;
+    place-content: center;
+    gap: 20px;
+}

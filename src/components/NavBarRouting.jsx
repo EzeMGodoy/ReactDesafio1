@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
 import "./NavBarRouting.css";
 
 function NavBarRouting() {
@@ -8,20 +9,36 @@ function NavBarRouting() {
       <nav>
         <ul>
           <li>
-            <NavLink activeclassname="active" to="/home">Inicio</NavLink>
+            <Link to="/home" className="logo">
+              SER <span>IMPERSONAL</span>
+            </Link>
           </li>
           <li>
-            <NavLink activeclassname="active" to="/capacitaciones">Capacitaciones</NavLink>
+            <NavLink activeclassname="active" to="/home">
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <NavLink activeclassname="active" to="/blog">Blog</NavLink>
+            <NavLink activeclassname="active" to="/capacitaciones">
+              Capacitaciones
+            </NavLink>
           </li>
           <li>
-            <NavLink activeclassname="active" to="/nosotros">Nosotros</NavLink>
+            <NavLink activeclassname="active" to="/blog">
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink activeclassname="active" to="/contacto">Contacto</NavLink>
+            <NavLink activeclassname="active" to="/nosotros">
+              Nosotros
+            </NavLink>
           </li>
+          <li>
+            <NavLink activeclassname="active" to="/contacto">
+              Contacto
+            </NavLink>
+          </li>
+          <CartWidget />
         </ul>
       </nav>
     </header>

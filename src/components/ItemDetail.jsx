@@ -13,3 +13,6 @@ function ItemDetail(props) {
 }
 
 export default ItemDetail
+
+
+

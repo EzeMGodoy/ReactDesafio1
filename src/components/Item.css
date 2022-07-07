@@ -1,3 +1,7 @@
+
+*{
+    box-sizing: border-box;
+}
 .capacitacionesCard{
     border: 2px solid black;
     display: flex;

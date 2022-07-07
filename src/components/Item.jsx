@@ -1,19 +1,24 @@
 import React from "react";
-import "./Item.css"
+import "./Item.css";
+import { Link } from "react-router-dom";
 
-function Item({ title, img, description, price }) {
+function Item({ id, title, img, description, price, category }) {
   return (
-    <div>
-      <div className="capacitacionesCard">
-        <img src={require(`../assets/img/${img}`)} alt={title} className="capacitacionesImg" />
+    <Link to={`/item/${id}`} >
+      <div className={`capacitacionesCard ${category}-category`}>
+        <img
+          src={require(`../assets/img/${img}`)}
+          alt={title}
+          className="capacitacionesImg"
+        />
         <div className="capacitacionesBody">
           <h5 className="capacitacionesTitle">{title}</h5>
-          <p>{description}</p>
           <p>${price}</p>
-          <button className="capacitacionesButton" onClick={description}>Ver más</button>
+          <p>Categoria: {category}</p>
+          <button className="capacitacionesButton">Ver más</button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
