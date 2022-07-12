@@ -1,5 +1,6 @@
 import "./Body.css";
 import Cards from "./Cards";
+import ItemCount from "./ItemCount";
 
 
 function Body() {

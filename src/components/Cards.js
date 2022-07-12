@@ -1,4 +1,5 @@
 import "./Cards.css";
+import ItemCount from "./ItemCount";
 
 
 function Cards({product, description, price, pictureUrl}) {

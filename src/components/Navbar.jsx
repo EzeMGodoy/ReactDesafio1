@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 function Navbar() {
@@ -17,9 +17,13 @@ function Navbar() {
     <section className="NavBarCategories">
       {categories.map((cat) => {
         return (
-          <Link to={cat.address} className="Links" key={cat.id}>
+          <NavLink
+            to={cat.address}
+            className={({ isActive }) => (isActive ? "activeClass" : "Links")}
+            key={cat.id}
+          >
             {cat.text}
-          </Link>
+          </NavLink>
         );
       })}
     </section>

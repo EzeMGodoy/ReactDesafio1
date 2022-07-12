@@ -1,7 +1,19 @@
-.NavBarCategories{
-    background-color: lightblue;
-    display: grid;
-    flex-direction: column;
-    place-content: center;
-    gap: 20px;
+.NavBarCategories {
+  background-color: lightblue;
+  display: grid;
+  flex-direction: column;
+  place-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.activeClass {
+  color: rgb(79, 151, 19);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.Links {
+  font-weight: bold;
+  text-decoration: none;
 }

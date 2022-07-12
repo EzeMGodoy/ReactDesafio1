@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import "./ItemCount.css";
 
-function Contador({ stock, initial, onAdd }) {
+function ItemCount({onAdd }) {
+  const stock = 8
+  const initial = 1;
+
   const [num, setNum] = useState(initial);
 
   useEffect(() => {
@@ -69,4 +72,4 @@ function Contador({ stock, initial, onAdd }) {
   );
 }
 
-export default Contador;
+export default ItemCount;

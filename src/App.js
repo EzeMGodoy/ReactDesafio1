@@ -16,6 +16,7 @@ import Navbar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 // import ItemCount from "./components/ItemCount";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import { CartProvider } from "./components/Context/CartContext";
 
 function App() {
   // const agregarCarrito = (cantidad) => {
@@ -37,42 +38,46 @@ function App() {
   // };
 
   return (
-    <BrowserRouter>
-      <NavBarRouting />
-      <Navbar />
-      <Routes>
-        <Route exact path="/home" element={<Home />}></Route>
-        <Route
-          exact
-          path="/capacitaciones"
-          element={<Capacitaciones />}
-        ></Route>
-        <Route exact path="/blog" element={<Blog />}></Route>
-        <Route exact path="/nosotros" element={<About />}></Route>
-        <Route exact path="/contacto" element={<Contacto />}></Route>
-        <Route
-          exact
-          path="/personajes/:characterId"
-          element={<Detail />}
-        ></Route>
-        <Route path="*" element={<NotFound />}></Route>
-        <Route
-          path="/"
-          element={
-            <ItemListContainer greetings="Capacitaciones Ser Impersonal" />
-          }
-        />
-        <Route
-          path="/category/:idcategoria"
-          element={<ItemListContainer greetings="Filtrado" />}
-        />
-        <Route path="/item/:iditem" element={<ItemDetailContainer />} />
-        {/* <Route path="/" element={<Container />}></Route> */}
-        {/* <Welcome hola="Profe" /> */}
-        {/* <ItemCount stock={5} initial={1} onAdd={agregarCarrito} /> */}
-        {/* <Body/> */}
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBarRouting />
+        <Navbar />
+        <Routes>
+          <Route path="*" element={<NotFound />}></Route>
+          <Route exact path="/home" element={<Home />}></Route>
+          <Route
+            exact
+            path="/capacitaciones"
+            element={<Capacitaciones />}
+          ></Route>
+          <Route exact path="/blog" element={<Blog />}></Route>
+          <Route exact path="/nosotros" element={<About />}></Route>
+          <Route exact path="/contacto" element={<Contacto />}></Route>
+          <Route
+            exact
+            path="/personajes/:characterId"
+            element={<Detail />}
+          ></Route>
+          <Route
+            path="/"
+            element={
+              <ItemListContainer greetings="Capacitaciones Ser Impersonal" />
+            }
+          />
+          <Route
+            path="/category/:idcategoria"
+            element={<ItemListContainer greetings="Filtrado" />}
+          />
+          <Route path="/item/:iditem" element={<ItemDetailContainer />} />
+          {/* <Route path="*" element={<Navigate to="/home"></Navigate>} />  Esta ruta me lleva a home si pongo cualquier ruta. Para que funcione, comentar la de notFound L-44*/}
+
+          {/* <Route path="/" element={<Container />}></Route> */}
+          {/* <Welcome hola="Profe" /> */}
+          {/* <ItemCount stock={5} initial={1} onAdd={agregarCarrito} /> */}
+          {/* <Body/> */}
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
