@@ -10,13 +10,14 @@ import Contacto from "./components/Pages/Contacto/Contacto";
 import NotFound from "./components/Pages/NotFound/NotFound";
 import Detail from "./components/Detail/Detail";
 // import Swal from "sweetalert2";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 // import Body from "./components/Body";
 // import Welcome from "./components/Welcome";
 import ItemListContainer from "./components/ItemListContainer";
 // import ItemCount from "./components/ItemCount";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./components/Context/CartContext";
+import Container from "./components/Container/Container";
 
 function App() {
   // const agregarCarrito = (cantidad) => {
@@ -75,7 +76,9 @@ function App() {
           {/* <Welcome hola="Profe" /> */}
           {/* <ItemCount stock={5} initial={1} onAdd={agregarCarrito} /> */}
           {/* <Body/> */}
+          <Route path="/container" element={<Container/>}/>
         </Routes>
+        
       </BrowserRouter>
     </CartProvider>
   );

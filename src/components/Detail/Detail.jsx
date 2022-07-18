@@ -13,7 +13,7 @@ function Detail() {
 
   useEffect(() => {
     fetchCard();
-  }, []);
+  }, );
 
 
   return (

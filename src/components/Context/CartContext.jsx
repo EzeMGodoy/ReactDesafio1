@@ -1,6 +1,6 @@
 // {
 //     Pasos para crear el contexto:
-// .... 1 Generar el archivo Context
+//     1 Generar el archivo Context
 //     2 Crear el contexto con el hook createContext()previamente importado de react
 //     3 Extraer el Provider(Componente funcional)de su contexto creado en el paso anterior con destructuring
 //     4 Crear La función CartProvider(componente funcional)donde tendremos todas las funciones que corresponden al carrito
