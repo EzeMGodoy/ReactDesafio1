@@ -4,7 +4,7 @@ import "./CartWidget.css"
 
 function CartWidget() {
   return (
-    <a href="/">
+    <a href="/cart">
     <FaShoppingCart className="cartWidget" />
     </a>
   )
