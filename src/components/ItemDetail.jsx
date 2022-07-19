@@ -34,6 +34,7 @@ function ItemDetail(props) {
         </Link>
       ) : (
         <ItemCount className="itemCount" onAdd={onAdd} />
+        // <ItemCount className="itemCount" onAdd={addToCart} />
       )}
     </div>
   );

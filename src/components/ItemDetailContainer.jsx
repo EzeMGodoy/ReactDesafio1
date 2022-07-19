@@ -20,29 +20,29 @@ function ItemDetailContainer() {
     setButtonClicked(!buttonClicked);
   };
 
-  /* useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       fetch("../api.json")
         .then((res) => res.json())
         .then((data) => setdescriptionFetch(data.filter((i) => i.id === iditem)));
     }, 1000);
-  }, [iditem]); */
+  }, [iditem]);
 
-  useEffect(() => {
-    // setIsLoading(true)
+  /* useEffect(() => {
+    setIsLoading(true)
     const db = getFirestore();
 
-    // const capacitacionesRef = collection(db, "capacitaciones");
-    /* getDocs(capacitacionesRef).then((snapshot) => {
+    const capacitacionesRef = collection(db, "capacitaciones");
+    getDocs(capacitacionesRef).then((snapshot) => {
       setCapacitacionesFetch(snapshot.docs.map((doc) => doc.data()));
     });
-  }, []); */
+  }, []);
 
     const q = query(collection(db, "capacitaciones"), where("id", "==", 1));
     getDocs(q).then((snapshot) => {
       setCapacitacionesFetch(snapshot.docs.map((doc) => doc.data()));
     });
-  }, []);
+  }, []); */
 
   return (
     <div className="itemDetailContainer">
@@ -57,11 +57,6 @@ function ItemDetailContainer() {
       </div>
     </div>
 
-    // <div className="itemDetailContainer">
-    //   <ItemDetail detail={descriptionFetch[0]}/>
-    // </div>
-
-    // <ItemDetail {...descriptionFetch}/>
   );
 }
 

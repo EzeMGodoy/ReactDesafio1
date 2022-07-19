@@ -18,6 +18,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { CartProvider } from "./components/Context/CartContext";
 import Container from "./components/Container/Container";
+import Cart from "./components/Cart";
 
 function App() {
   // const agregarCarrito = (cantidad) => {
@@ -70,15 +71,16 @@ function App() {
             element={<ItemListContainer greetings="Filtrado" />}
           />
           <Route path="/item/:iditem" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+
           {/* <Route path="*" element={<Navigate to="/home"></Navigate>} />  Esta ruta me lleva a home si pongo cualquier ruta. Para que funcione, comentar la de notFound L-44*/}
 
           {/* <Route path="/" element={<Container />}></Route> */}
           {/* <Welcome hola="Profe" /> */}
           {/* <ItemCount stock={5} initial={1} onAdd={agregarCarrito} /> */}
           {/* <Body/> */}
-          <Route path="/container" element={<Container/>}/>
+          {/* <Route path="/container" element={<Container/>}/> */}
         </Routes>
-        
       </BrowserRouter>
     </CartProvider>
   );
