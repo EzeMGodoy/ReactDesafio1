@@ -59,13 +59,18 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
   }
 
+  const totalWidget = () => {
+    return cart.reduce((acc, item)=> acc + item.quantity, 0)
+  }
+
   const context = {
     //el contexto toma todas las funciones que hayan
     cart,
     clearCart,
     addToCart,
     removeFromCart,
-    totalPrice
+    totalPrice,
+    totalWidget
   };
 
   return <Provider value={context}>{children}</Provider>;
