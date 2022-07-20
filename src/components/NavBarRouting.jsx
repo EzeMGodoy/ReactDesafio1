@@ -10,7 +10,7 @@ function NavBarRouting() {
         <ul>
           <li>
             <Link to="/home" className="logo">
-              SER <span>IMPERSONAL</span>
+              SER<span>IMPERSONAL</span>
             </Link>
           </li>
           <li>

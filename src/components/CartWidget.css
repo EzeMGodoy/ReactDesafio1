@@ -4,11 +4,12 @@
 
   .cartWidgetContainer{
     display: flex;
-    background-color: green;
   }
 
   .numerito{
     background-color: red;
-    border-radius: 50%;
+    border-radius: 20%;
     text-align: center;
+    padding: 2px;
+
   }
