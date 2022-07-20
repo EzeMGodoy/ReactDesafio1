@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import {
   getFirestore,
   collection,
@@ -15,16 +15,18 @@ function ItemDetailContainer() {
   const [capacitacionesFetch, setCapacitacionesFetch] = useState([]);
   const { iditem } = useParams();
 
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const handleButtonClick = () => {
-    setButtonClicked(!buttonClicked);
-  };
+  // const [buttonClicked, setButtonClicked] = useState(false);
+  // const handleButtonClick = () => {
+  //   setButtonClicked(!buttonClicked);
+  // };
 
   useEffect(() => {
     setTimeout(() => {
       fetch("../api.json")
         .then((res) => res.json())
-        .then((data) => setdescriptionFetch(data.filter((i) => i.id === iditem)));
+        .then((data) =>
+          setdescriptionFetch(data.filter((i) => i.id === iditem))
+        );
     }, 1000);
   }, [iditem]);
 
@@ -46,17 +48,13 @@ function ItemDetailContainer() {
 
   return (
     <div className="itemDetailContainer">
-      <button onClick={handleButtonClick}>Ver más</button>
       <div>
-        {buttonClicked && descriptionFetch.length !== 0 && (
-          <ItemDetail
-            detail={descriptionFetch[0]}
-            handleButtonClick={handleButtonClick}
-          />
-        )}
+        {descriptionFetch.length !== 0 
+        ? <ItemDetail
+          detail={descriptionFetch[0]}/>
+        : <h4>Cargando...</h4>}
       </div>
     </div>
-
   );
 }
 

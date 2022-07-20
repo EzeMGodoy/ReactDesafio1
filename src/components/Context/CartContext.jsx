@@ -50,9 +50,14 @@ export const CartProvider = ({ defaultValue = [], children }) => {
   };
 
   const removeFromCart = (id) => {
-    const newCart = [...cart].filter((element) => element.item.id !== id);
+    const newCart = [...cart].filter((element) => element.id !== id);
     setCart(newCart);
   };
+
+  const totalPrice = () => {
+    return cart.reduce((acc, item) => acc + item.price*item.quantity,0)
+
+  }
 
   const context = {
     //el contexto toma todas las funciones que hayan
@@ -60,6 +65,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     clearCart,
     addToCart,
     removeFromCart,
+    totalPrice
   };
 
   return <Provider value={context}>{children}</Provider>;

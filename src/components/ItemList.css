@@ -1,12 +1,9 @@
 .listaProductosContainer{
-    /* background-color: red; */
-    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
 
 .separadorCards{
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
