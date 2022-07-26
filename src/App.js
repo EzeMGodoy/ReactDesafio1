@@ -8,7 +8,7 @@ import About from "./components/Pages/About/About";
 import Contacto from "./components/Pages/Contacto/Contacto";
 // import Container from "./components/Container/Container";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import Detail from "./components/Detail/Detail";
+// import Detail from "./components/Detail/Detail";
 // import Swal from "sweetalert2";
 import Navbar from "./components/Navbar";
 // import Body from "./components/Body";
@@ -55,11 +55,6 @@ function App() {
           <Route exact path="/blog" element={<Blog />}></Route>
           <Route exact path="/nosotros" element={<About />}></Route>
           <Route exact path="/contacto" element={<Contacto />}></Route>
-          <Route
-            exact
-            path="/personajes/:characterId"
-            element={<Detail />}
-          ></Route>
           <Route
             path="/"
             element={
