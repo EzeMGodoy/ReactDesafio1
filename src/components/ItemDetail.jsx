@@ -24,7 +24,7 @@ function ItemDetail(props) {
       <p>{props.detail.description}</p>
       <p className="price">${props.detail.price}</p>
       <img
-        src={require(`../assets/img/${props.detail.img}`)}
+        src={props.detail.image}
         alt={props.detail.title}
         style={{ width: "100%" }}
       />

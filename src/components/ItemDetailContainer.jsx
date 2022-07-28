@@ -9,7 +9,7 @@ import {
 import ItemDetail from "./ItemDetail";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
-import { getAllCapacitaciones } from "./services/firestore";
+import { getCapacitacionId } from "./services/firestore";
 
 // const [buttonClicked, setButtonClicked] = useState(false);
 // const handleButtonClick = () => {
@@ -48,7 +48,7 @@ function ItemDetailContainer() {
   const { iditem } = useParams();
 
   useEffect(() => {
-    getAllCapacitaciones()
+    getCapacitacionId(iditem)
       .then((data) => {
         console.log("ItemListContainer", data);
         setdescriptionFetch(data);
@@ -61,9 +61,9 @@ function ItemDetailContainer() {
 
   return (
     <div className="itemDetailContainer">
-      <div>z
+      <div>
         {descriptionFetch.length !== 0 ? (
-          <ItemDetail detail={descriptionFetch[0]} />
+          <ItemDetail detail={descriptionFetch} />
         ) : (
           <h4>Cargando...</h4>
         )}

@@ -1,6 +1,6 @@
 # Ser Impersonal
 
-Ser Impersonal es un ecommerce que muesra al usuario los diferentes cursos y capacitaciones que puede adquirir para desarrollar la capacidad de autosanacion.
+Ser Impersonal es un ecommerce que muestra al usuario los diferentes cursos y capacitaciones que puede adquirir para desarrollar la capacidad de autosanacion.
 
 Cuenta con
 

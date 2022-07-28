@@ -6,7 +6,7 @@ function ItemCart({ id, title, price, img, quantity, remove }) {
   return (
     <div className="itemCart">
       <img
-        src={require(`../assets/img/${img}`)}
+        src={img}
         alt={title}
         className="capacitacionesImg"
       />

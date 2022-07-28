@@ -6,12 +6,12 @@ function ItemList({ listadoProductos }) {
   return (
     <div className="listaProductosContainer">
       <div className="separadorCards">
-        {listadoProductos.map((unProducto) => (
+        {listadoProductos.map((unProducto, index) => (
           <Item
-            key={unProducto.id}
+            key={index}
             id={unProducto.id}
             title={unProducto.title}
-            img={unProducto.img}
+            image={unProducto.image}
             price={unProducto.price}
             category={unProducto.category}
             description={unProducto.description}

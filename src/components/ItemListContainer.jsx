@@ -3,7 +3,10 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import { getAllCapacitaciones } from "./services/firestore";
+import {
+  getAllCapacitaciones,
+  getCapacitacionesCategories,
+} from "./services/firestore";
 
 /* useEffect(() => {
   setIsLoading(true);
@@ -24,19 +27,22 @@ function ItemListContainer({ greetings }) {
   const [productosFetch, setProductosFetch] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   let { idcategoria } = useParams();
-
+  getCapacitacionesCategories(idcategoria);
 
   useEffect(() => {
     setIsLoading(true);
-    getAllCapacitaciones()
+    
+    const consulta = idcategoria
+      ? getCapacitacionesCategories(idcategoria)
+      : getAllCapacitaciones();
+    consulta
       .then((data) => {
-        console.log("ItemListContainer", data)
         setProductosFetch(data);
       })
       .catch((errorMsg) => {
         console.log(errorMsg);
       })
-      .finally(()=> setIsLoading(false));
+      .finally(() => setIsLoading(false));
   }, [idcategoria]);
 
   return isLoading ? (
