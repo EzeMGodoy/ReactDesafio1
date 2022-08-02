@@ -1,13 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { addVenta } from "./services/firestore";
 import Swal from "sweetalert2";
+import { CartContext } from "./Context/CartContext";
 
 function Formulario({ items, total }) {
   const [newNombre, setNewNombre] = useState("");
   const [newApellido, setNewApellido] = useState("");
-  const [newDate, setNewDate] = useState("");
-  const [idVenta, setIdVenta] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const { clearCart } = useContext(CartContext);
 
   const nombreHandler = (event) => {
     setNewNombre(event.target.value);
@@ -15,29 +16,25 @@ function Formulario({ items, total }) {
   const apellidoHandler = (event) => {
     setNewApellido(event.target.value);
   };
-  const dateHandler = (event) => {
-    setNewDate(event.target.value);
+  const emailHandler = (event) => {
+    setNewEmail(event.target.value);
   };
   const submitHandler = async (event) => {
-    console.log("HOLA");
     event.preventDefault();
 
     const newBuyer = {
       name: newNombre,
       lastname: newApellido,
-      date: new Date(newDate),
     };
 
     const order = {
       buyer: newBuyer,
       total: total,
       items: items,
-      date: Date(),
     };
 
     const venta = await addVenta(order);
-    console.log(venta);
-    setIdVenta(venta.id);
+
 
     Swal.fire({
       title: "Compra realizada",
@@ -45,6 +42,7 @@ function Formulario({ items, total }) {
       icon: "success",
       confirmButtonText: "Ok",
     });
+    clearCart();
   };
   return (
     <form onSubmit={submitHandler}>
@@ -68,18 +66,16 @@ function Formulario({ items, total }) {
           />
         </div>
         <div>
-          <label>Date</label>
+          <label>Mail</label>
           <input
-            type="date"
-            min="2019-01-01"
-            max="2022-12-31"
-            value={newDate}
-            onChange={dateHandler}
+            type="email"
+            value={newEmail}
+            onChange={emailHandler}
           />
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit">Comprar</button>
       </div>
     </form>
   );

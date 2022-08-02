@@ -8,6 +8,7 @@ import {
   getDoc,
   doc,
   addDoc,
+  serverTimestamp,
 } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyAtUQtANyeDvn7YmyC5cyqbKF0v6vxdKwQ",
@@ -23,7 +24,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function getCapacitacionesCategories(category) {
-  console.log("hola");
   const capacitacionesCollectionRef = collection(db, "capacitaciones");
   const q = query(
     capacitacionesCollectionRef,
@@ -59,11 +59,13 @@ export async function getAllCapacitaciones() {
 export async function addVenta(venta) {
   const ordersCollection = collection(db, "ventas");
 
-  const refDoc = await addDoc(ordersCollection, venta);
-  const documento = await getDoc(doc(ordersCollection, refDoc));
-  console.log(documento);
-  return documento;
+  const refDoc = await addDoc(ordersCollection, {
+    ...venta,
+    date: serverTimestamp(),
+  });
+  const documento = await getDoc(doc(ordersCollection, refDoc.id));
 
+  return documento;
 }
 
 export default db;

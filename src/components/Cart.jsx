@@ -6,6 +6,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import Formulario from "./Formulario";
 
+
 function Cart() {
   const [finalizarCompra, setFinalizarCompra] = useState(false);
   const { cart, removeFromCart, clearCart, totalPrice } =
@@ -37,6 +38,7 @@ function Cart() {
           <button onClick={() => setFinalizarCompra(true)}>
             Finalizar Compra
           </button>
+          {finalizarCompra && <Formulario items={cart} total={totalPrice()} />}
         </>
       ) : (
         <>
@@ -46,7 +48,7 @@ function Cart() {
           </h4>
         </>
       )}
-      {finalizarCompra && <Formulario items={cart} total={totalPrice()} />}
+     
     </div>
   );
 }
