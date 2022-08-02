@@ -7,6 +7,7 @@ import {
   where,
   getDoc,
   doc,
+  addDoc,
 } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyAtUQtANyeDvn7YmyC5cyqbKF0v6vxdKwQ",
@@ -53,6 +54,16 @@ export async function getAllCapacitaciones() {
     return { ...item.data(), id: item.id };
   });
   return dataCapacitaciones;
+}
+
+export async function addVenta(venta) {
+  const ordersCollection = collection(db, "ventas");
+
+  const refDoc = await addDoc(ordersCollection, venta);
+  const documento = await getDoc(doc(ordersCollection, refDoc));
+  console.log(documento);
+  return documento;
+
 }
 
 export default db;

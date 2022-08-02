@@ -8,10 +8,10 @@ function Navbar() {
     {
       id: "capacitaciones",
       address: "/category/capacitaciones",
-      text: "Categoria CAPACITACIONES",
+      text: "Capacitaciones",
     },
-    { id: "cursos", address: "/category/cursos", text: "Categoria CURSOS" },
-    { id: "online", address: "/category/online", text: "Categoria ONLINE" },
+    { id: "cursos", address: "/category/cursos", text: "Cursos" },
+    { id: "online", address: "/category/online", text: "Online" },
   ];
   return (
     <section className="NavBarCategories">

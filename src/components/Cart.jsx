@@ -1,11 +1,13 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "./Context/CartContext";
 import ItemCart from "./ItemCart";
 import "./Cart.css";
 import { Link } from "react-router-dom";
+import Formulario from "./Formulario";
 
 function Cart() {
+  const [finalizarCompra, setFinalizarCompra] = useState(false);
   const { cart, removeFromCart, clearCart, totalPrice } =
     useContext(CartContext);
   const remover = (id) => {
@@ -21,7 +23,7 @@ function Cart() {
                 key={unProducto.id}
                 id={unProducto.id}
                 title={unProducto.title}
-                img={unProducto.img}
+                img={unProducto.image}
                 price={unProducto.price}
                 quantity={unProducto.quantity}
                 remove={remover}
@@ -32,6 +34,9 @@ function Cart() {
             Borrar carrito
           </button>
           <p className="totalPrice">TOTAL $: {totalPrice()}</p>
+          <button onClick={() => setFinalizarCompra(true)}>
+            Finalizar Compra
+          </button>
         </>
       ) : (
         <>
@@ -41,6 +46,7 @@ function Cart() {
           </h4>
         </>
       )}
+      {finalizarCompra && <Formulario items={cart} total={totalPrice()} />}
     </div>
   );
 }

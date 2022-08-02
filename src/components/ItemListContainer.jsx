@@ -27,11 +27,10 @@ function ItemListContainer({ greetings }) {
   const [productosFetch, setProductosFetch] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   let { idcategoria } = useParams();
-  getCapacitacionesCategories(idcategoria);
 
   useEffect(() => {
     setIsLoading(true);
-    
+
     const consulta = idcategoria
       ? getCapacitacionesCategories(idcategoria)
       : getAllCapacitaciones();

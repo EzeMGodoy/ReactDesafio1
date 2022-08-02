@@ -1,65 +1,70 @@
-import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
+import { addVenta } from "./services/firestore";
+import Swal from "sweetalert2";
 
-function Formulario(props) {
-  const [newTitle, setNewTitle] = useState("");
-  const [newAmount, setNewAmount] = useState("");
+function Formulario({ items, total }) {
+  const [newNombre, setNewNombre] = useState("");
+  const [newApellido, setNewApellido] = useState("");
   const [newDate, setNewDate] = useState("");
+  const [idVenta, setIdVenta] = useState("");
 
-  const titleHandler = (event) => {
-    setNewTitle(event.target.value);
+  const nombreHandler = (event) => {
+    setNewNombre(event.target.value);
   };
-  const amountHandler = (event) => {
-    setNewAmount(event.target.value);
+  const apellidoHandler = (event) => {
+    setNewApellido(event.target.value);
   };
   const dateHandler = (event) => {
     setNewDate(event.target.value);
   };
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
+    console.log("HOLA");
     event.preventDefault();
 
     const newBuyer = {
-      name: newTitle,
-      phone: newAmount,
-      email: new Date(newDate),
+      name: newNombre,
+      lastname: newApellido,
+      date: new Date(newDate),
     };
 
     const order = {
       buyer: newBuyer,
-      total: estadoPrecioTotal,
-      items: estadoCart,
+      total: total,
+      items: items,
       date: Date(),
     };
 
-    const ordersCollection = collection(db, "orders");
-    
-    addDoc(ordersCollection, order).then((doc) => setNewOrderId(doc.id));
+    const venta = await addVenta(order);
+    console.log(venta);
+    setIdVenta(venta.id);
 
-    props.onSaveData(newExpense);
-
-    setNewTitle("");
+    Swal.fire({
+      title: "Compra realizada",
+      text: `Su compra ha sido realizada. Su código es: ${venta.id}`,
+      icon: "success",
+      confirmButtonText: "Ok",
+    });
   };
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div>
-          <label>Title</label>
+          <label>Nombre</label>
           <input
             type="text"
-            placeholder="Nuevo Titulo"
-            value={newTitle}
-            onChange={titleHandler}
+            placeholder="Escriba su nombre"
+            value={newNombre}
+            onChange={nombreHandler}
           />
         </div>
         <div>
-          <label>Amount</label>
+          <label>Apellido</label>
           <input
-            type="number"
-            min="0.01"
-            step="0.01"
-            value={newAmount}
-            onChange={amountHandler}
+            type="text"
+            placeholder="Escriba su apellido"
+            value={newApellido}
+            onChange={apellidoHandler}
           />
         </div>
         <div>
