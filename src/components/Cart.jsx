@@ -44,7 +44,7 @@ function Cart() {
         <>
           <h4>CARRITO VACIO</h4>
           <h4>
-            <Link to="/">Regresar a Compras</Link>
+            <Link to="/">Regresar a la Tienda</Link>
           </h4>
         </>
       )}
