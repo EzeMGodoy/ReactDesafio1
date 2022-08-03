@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./Contacto.css"
 
 function Contacto() {
   return (
-    <h2>Contacto</h2>
-  )
+    <div className="contenedorContacto">
+      <h2>Contacto</h2>
+    </div>
+  );
 }
 
-export default Contacto
+export default Contacto;

@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import "./Blog.css";
 
 function Blog() {
   return (
-    <h2>Blog</h2>
-  )
+    <div className="contenedorBlog">
+      <h2>Blog</h2>
+    </div>
+  );
 }
 
-export default Blog
+export default Blog;

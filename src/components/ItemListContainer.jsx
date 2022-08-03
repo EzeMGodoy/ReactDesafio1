@@ -8,21 +8,6 @@ import {
   getCapacitacionesCategories,
 } from "./services/firestore";
 
-/* useEffect(() => {
-  setIsLoading(true);
-  setTimeout(() => {
-    fetch("../api.json")
-      .then((res) => res.json())
-      .then((data) =>
-        idcategoria
-          ? setProductosFetch(
-              data.filter((item) => item.category === idcategoria)
-            )
-          : setProductosFetch(data)
-      )
-      .finally(() => setIsLoading(false));
-  }, 1000);
-}, [idcategoria]); */
 function ItemListContainer({ greetings }) {
   const [productosFetch, setProductosFetch] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
