@@ -11,7 +11,7 @@ Cuenta con
 - alerta stock: Hay un stock determinado para cada item, avisa al usuario cuando está por alcanzar el máximo disponible.
 
 
-
+GIF de la página: https://github.com/EzeMGodoy/reactDesafio1/blob/main/src/assets/gifSerimpersonal.gif
 
 
 
