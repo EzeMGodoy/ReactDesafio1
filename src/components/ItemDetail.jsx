@@ -6,9 +6,6 @@ import ItemCount from "./ItemCount";
 import "./ItemDetail.css";
 
 function ItemDetail(props) {
-  // const {title, id, description, price, img} = props.item;
-  // const {title, id, description, price, img} = props.detail; CREO QUE ES ESTA PERO NO FUNCIONA IGUALMENTE
-
   const { addToCart } = useContext(CartContext);
 
   const [purchaseCompleted, setPurchaseCompleted] = useState(false);
@@ -23,6 +20,9 @@ function ItemDetail(props) {
       <h1>{props.detail.title}</h1>
       <p>{props.detail.description}</p>
       <p className="price">${props.detail.price}</p>
+      <p>
+        Categoria <b>{props.detail.categoryId}</b>
+      </p>
       <img
         src={props.detail.image}
         alt={props.detail.title}
@@ -34,7 +34,6 @@ function ItemDetail(props) {
         </Link>
       ) : (
         <ItemCount className="itemCount" onAdd={onAdd} />
-        // <ItemCount className="itemCount" addToCart={addToCart} />
       )}
     </div>
   );

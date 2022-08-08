@@ -13,9 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px;
   width: 150px;
-  gap: 20px;
+  gap: 10px;
   background-color: blue;
   flex-wrap: wrap;
 

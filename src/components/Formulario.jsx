@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { addVenta } from "./services/firestore";
 import Swal from "sweetalert2";
 import { CartContext } from "./Context/CartContext";
+import "./Formulario.css";
 
 function Formulario({ items, total }) {
   const [newNombre, setNewNombre] = useState("");
@@ -35,7 +36,6 @@ function Formulario({ items, total }) {
 
     const venta = await addVenta(order);
 
-
     Swal.fire({
       title: "Compra realizada",
       text: `Su compra ha sido realizada. Su código es: ${venta.id}`,
@@ -46,10 +46,11 @@ function Formulario({ items, total }) {
   };
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
+      <div className="formContainer">
         <div>
-          <label>Nombre</label>
+          <label className="label">Nombre</label>
           <input
+            required
             type="text"
             placeholder="Escriba su nombre"
             value={newNombre}
@@ -57,8 +58,9 @@ function Formulario({ items, total }) {
           />
         </div>
         <div>
-          <label>Apellido</label>
+          <label className="label">Apellido</label>
           <input
+            required
             type="text"
             placeholder="Escriba su apellido"
             value={newApellido}
@@ -66,8 +68,9 @@ function Formulario({ items, total }) {
           />
         </div>
         <div>
-          <label>Mail</label>
+          <label className="label">Mail</label>
           <input
+            required
             type="email"
             value={newEmail}
             onChange={emailHandler}

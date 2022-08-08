@@ -1,0 +1,10 @@
+.notFoundContainer {
+  text-align: center;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.notFound{
+    margin-top: -20rem;
+}

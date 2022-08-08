@@ -1,6 +1,5 @@
 import React from "react";
 import "./ItemCart.css"
-import ItemCount from "./ItemCount";
 
 function ItemCart({ id, title, price, img, quantity, remove }) {
   return (
@@ -12,6 +11,7 @@ function ItemCart({ id, title, price, img, quantity, remove }) {
       />
       <div className="capacitacionesBody">
         <h5 className="capacitacionesTitle">{title}</h5>
+    
         <p>${price}</p>
         <p>Cantidad: {quantity}</p>
         <button className="borrarItem" onClick={()=>remove(id)}>Borrar</button>

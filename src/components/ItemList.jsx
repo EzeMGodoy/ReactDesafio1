@@ -13,7 +13,7 @@ function ItemList({ listadoProductos }) {
             title={unProducto.title}
             image={unProducto.image}
             price={unProducto.price}
-            category={unProducto.category}
+            category={unProducto.categoryId}
             description={unProducto.description}
           />
         ))}

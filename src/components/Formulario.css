@@ -1,0 +1,14 @@
+.formContainer{
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    display: flex;
+    display: grid;
+    place-content: center;
+   
+}
+
+.label{
+    margin-right: 10px;
+    
+}
