@@ -44,7 +44,7 @@ function ItemCount({onAdd }) {
     }
   };
   const reiniciar = () => {
-    setNum(0);
+    setNum(1);
   };
 
   const addToCart = () => {
